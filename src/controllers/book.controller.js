@@ -9,6 +9,17 @@ export const getBooks = async (_, res) => {
   }
 };
 
+export const getBookDetails = async (req, res) => {
+  const { id } = req.query;
+
+  try {
+    const book = await Book.findById(id);
+    return res.status(200).json(book);
+  } catch (error) {
+    console.log("Error fetching book details !!!", error);
+  }
+};
+
 export const addBook = async (req, res) => {
   const { title, description, image, ratings, originalPrice, price, author } =
     req.body;
