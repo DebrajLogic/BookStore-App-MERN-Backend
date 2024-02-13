@@ -15,8 +15,7 @@ app.get("/", (req, res) => {
 connectDB();
 
 app.use(cors({
-  origin: ['https://book-store-app-mern-frontend.vercel.app/],
-  methods:['GET','POST'));
+ 
 app.use(express.json());
 app.use("/api/v1", bookRouter);
 
